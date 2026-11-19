@@ -6,6 +6,15 @@ plugins {
     id("org.jetbrains.intellij.platform")
 }
 
+kotlin {
+    compilerOptions {
+        // Do not generate delegating stubs for deprecated default methods inherited from
+        // platform interfaces (e.g. ToolWindowFactory.isApplicable), which the plugin
+        // verifier reports as deprecated API usages.
+        freeCompilerArgs.add("-Xjvm-default=all")
+    }
+}
+
 // Read more: https://plugins.jetbrains.com/docs/intellij/tools-intellij-platform-gradle-plugin.html
 dependencies {
     implementation(libs.zxing.core)

@@ -4,7 +4,7 @@ import com.fasterxml.jackson.core.JsonProcessingException
 import com.fasterxml.jackson.databind.DeserializationFeature
 import com.fasterxml.jackson.databind.JsonNode
 import com.fasterxml.jackson.databind.ObjectMapper
-import com.fasterxml.jackson.databind.node.JsonNodeFactory
+import com.fasterxml.jackson.databind.cfg.JsonNodeFeature
 import com.fasterxml.jackson.databind.node.NullNode
 import com.jayway.jsonpath.Configuration
 import com.jayway.jsonpath.InvalidPathException
@@ -52,7 +52,7 @@ class JsonFormatter {
     private val mapper = ObjectMapper()
         // Keep numeric literals exactly as written (1.10 stays 1.10, big integers stay exact).
         .enable(DeserializationFeature.USE_BIG_DECIMAL_FOR_FLOATS)
-        .setNodeFactory(JsonNodeFactory.withExactBigDecimals(true))
+        .configure(JsonNodeFeature.STRIP_TRAILING_BIGDECIMAL_ZEROES, false)
 
     private val jsonPathConfiguration: Configuration = Configuration.builder()
         .jsonProvider(JacksonJsonProvider(mapper))
@@ -140,10 +140,8 @@ class JsonFormatter {
             return
         }
         out.append("{\n")
-        val fields = node.fields()
         var first = true
-        while (fields.hasNext()) {
-            val (name, value) = fields.next()
+        for ((name, value) in node.properties()) {
             if (!first) out.append(",\n")
             first = false
             appendIndent(out, indentSize, level + 1)

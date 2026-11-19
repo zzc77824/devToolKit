@@ -5,18 +5,14 @@
 
     <!-- Public plugin name should be written in Title Case.
      Guidelines: https://plugins.jetbrains.com/docs/marketplace/best-practices-for-listing.html#plugin-name -->
-    <name>DevToolkit</name>
+    <name>DevToolsUniverse</name>
 
     <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
-    <vendor url="https://www.yourcompany.com">YourCompany</vendor>
+    <vendor url="https://github.com/zzc77824/devToolKit.git">zzc77824</vendor>
 
     <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
          Guidelines: https://plugins.jetbrains.com/docs/marketplace/best-practices-for-listing.html#plugin-description -->
-    <description><![CDATA[
-        DevToolkit 工具窗口，包含两个标签页：<br>
-        · QR Code：任意文本（支持中文、emoji）转二维码，可调容错率（L/M/Q/H）与尺寸，实时预览；<br>
-        · JSON：可折叠编辑框中的格式化、压缩，以及完整 JSONPath 查询。
-        ]]></description>
+    <description>DevToolsUniverse is an IntelliJ IDEA developer toolkit with two tabs. The QR Code tab converts arbitrary UTF-8 text into QR codes, with selectable L/M/Q/H error correction levels and output sizes from 64 to 2048 px. The JSON tab formats, minifies and queries JSON with JSONPath in foldable editors with syntax highlighting and line numbers.</description>
 
     <!-- Product and plugin compatibility requirements.
          Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
