@@ -1,0 +1,11 @@
+[versions]
+junit = "4.13.2"
+zxing = "3.5.4"
+jackson = "2.23.0"
+jsonPath = "3.0.0"
+
+[libraries]
+junit = { module = "junit:junit", version.ref = "junit" }
+zxing-core = { module = "com.google.zxing:core", version.ref = "zxing" }
+jackson-databind = { module = "com.fasterxml.jackson.core:jackson-databind", version.ref = "jackson" }
+json-path = { module = "com.jayway.jsonpath:json-path", version.ref = "jsonPath" }

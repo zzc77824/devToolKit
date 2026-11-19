@@ -1,0 +1,38 @@
+<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient id="lid" x1="20" y1="12.2" x2="20" y2="18.8" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#FFD992"/>
+            <stop offset="1" stop-color="#F7AC3C"/>
+        </linearGradient>
+        <linearGradient id="body" x1="20" y1="17.2" x2="20" y2="32.6" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#FBBE5D"/>
+            <stop offset="1" stop-color="#EA8C22"/>
+        </linearGradient>
+        <linearGradient id="grip" x1="13" y1="7" x2="27" y2="15" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#C7D6E6"/>
+            <stop offset="1" stop-color="#93A9BF"/>
+        </linearGradient>
+    </defs>
+
+    <!-- 40x40 canvas, ~2px transparent padding, glyph scaled about the center -->
+    <g transform="translate(20 20) scale(1.1) translate(-20 -20)">
+        <!-- handle -->
+        <path d="M13.6 14.4V10.9C13.6 9.02 15.12 7.5 17 7.5H23C24.88 7.5 26.4 9.02 26.4 10.9V14.4"
+              stroke="url(#grip)" stroke-width="2.7" stroke-linecap="round"/>
+
+        <!-- lid -->
+        <rect x="4.6" y="12.2" width="30.8" height="6.6" rx="2" fill="url(#lid)"/>
+        <path d="M6.6 12.5H33.4" stroke="#FFEBC4" stroke-width="1.1" stroke-linecap="round" opacity="0.9"/>
+
+        <!-- body -->
+        <rect x="6.6" y="17.2" width="26.8" height="15.4" rx="2.4" fill="url(#body)"/>
+        <rect x="6.6" y="17.2" width="26.8" height="2.1" fill="#C97A17" opacity="0.4"/>
+
+        <!-- latch -->
+        <rect x="18.5" y="11.7" width="3.4" height="8" rx="1.5" fill="#FFF8E8"/>
+        <rect x="19.55" y="14.4" width="1.3" height="2.9" rx="0.65" fill="#94631F"/>
+
+        <!-- body highlight -->
+        <path d="M9.9 21.2V29.6" stroke="#FFDFA6" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/>
+    </g>
+</svg>

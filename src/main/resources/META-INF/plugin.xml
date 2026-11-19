@@ -1,0 +1,39 @@
+<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<idea-plugin>
+    <!-- Unique identifier of the plugin. It should be FQN. It cannot be changed between the plugin versions. -->
+    <id>org.zzc.DevToolkit</id>
+
+    <!-- Public plugin name should be written in Title Case.
+     Guidelines: https://plugins.jetbrains.com/docs/marketplace/best-practices-for-listing.html#plugin-name -->
+    <name>DevToolkit</name>
+
+    <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
+    <vendor url="https://www.yourcompany.com">YourCompany</vendor>
+
+    <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/best-practices-for-listing.html#plugin-description -->
+    <description><![CDATA[
+        DevToolkit 工具窗口，包含两个标签页：<br>
+        · QR Code：任意文本（支持中文、emoji）转二维码，可调容错率（L/M/Q/H）与尺寸，实时预览；<br>
+        · JSON：可折叠编辑框中的格式化、压缩，以及完整 JSONPath 查询。
+        ]]></description>
+
+    <!-- Product and plugin compatibility requirements.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
+    <depends>com.intellij.modules.platform</depends>
+    <!-- JSON language support is used for syntax highlighting in the JSON editors. -->
+    <depends>com.intellij.modules.json</depends>
+
+    <resource-bundle>messages.MyMessageBundle</resource-bundle>
+
+    <!-- Extensions defined by the plugin.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- If the plugin is published on JetBrains Marketplace, errors reported by users are available on the plugin page.
+             See https://plugins.jetbrains.com/docs/marketplace/error-handler.html#developers-side for details. -->
+        <errorHandler implementation="com.intellij.diagnostic.JetBrainsMarketplaceErrorReportSubmitter"/>
+        <toolWindow id="DevToolkit" factoryClass="org.zzc.DevToolkitToolWindowFactory"
+                    icon="AllIcons.Toolwindows.ToolWindowPalette" anchor="right"/>
+    </extensions>
+
+</idea-plugin>
